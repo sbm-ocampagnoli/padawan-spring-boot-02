@@ -10,10 +10,12 @@ public class PessoaDto {
 	
 	private String nome;
 	private SexoPessoa sexo;
+	private int idade;
 
 	public PessoaDto(Pessoa pessoa) {
 		this.nome = pessoa.getNome();
 		this.sexo = pessoa.getSexo();
+		this.setIdade(pessoa.getIdade());
 	}
 
 	public String getNome() {
@@ -34,6 +36,14 @@ public class PessoaDto {
 
 	public static List<PessoaDto> converter(List<Pessoa> pessoas) {
 		return pessoas.stream().map(PessoaDto::new).collect(Collectors.toList());
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
 }

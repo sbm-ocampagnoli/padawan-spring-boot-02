@@ -17,8 +17,14 @@ public class Pessoa {
 	@Enumerated(EnumType.STRING)
 	private SexoPessoa sexo;
 	private int idade;
-	
+
 	public Pessoa() {
+	}
+
+	public Pessoa(String nome, SexoPessoa sexo, int idade) {
+		this.nome = nome;
+		this.sexo = sexo;
+		this.idade = idade;
 	}
 
 	public SexoPessoa getSexo() {
